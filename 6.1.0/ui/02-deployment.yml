@@ -45,3 +45,12 @@ spec:
         env:
         - name: SW_OAP_ADDRESS
           value: oap:12800
+        #设置时区
+        volumeMounts:
+        - name: host-time
+          mountPath: /etc/localtime
+          readOnly: true
+      volumes:
+      - name: host-time
+        hostPath:
+          path: /etc/localtime
